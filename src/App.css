@@ -1,0 +1,478 @@
+/* .auto-grid {
+  --auto-grid-min-size: 16rem;
+
+  display: grid;
+  grid-template-columns: repeat(1, minmax(var(--auto-grid-min-size), 2fr));
+  grid-gap: 1rem;
+} */
+
+.App {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #111;
+}
+
+.App-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+
+  flex: 1 1 0%;
+
+  background-color: #111;
+}
+
+@media (min-width: 650px) {
+  .App {
+    background-position: center center;
+  }
+
+  .App-content {
+    display: flex;
+    align-items: flex-center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 361px) and (orientation: portrait) {
+  .roverDropdown,
+  .cameraDropdown,
+  .sol,
+  .noPhotos,
+  .sol-input
+   {
+    font-size: .9rem !important;
+  }
+  .sol-input {
+    margin-bottom: .1em !important;
+  }
+  .marsTitle {
+    font-size: 1.2rem !important;
+  }
+  .search {
+    margin-bottom: -.6em !important;
+  }
+}
+
+@media (max-height: 700px) and (orientation: portrait) {
+   .roverDropdown,
+  .cameraDropdown,
+  .sol,
+  .noPhotos,
+  .sol-input
+   {
+    font-size: .9rem !important;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .apod-photo {
+    width: 75% !important;
+  }
+  .marsPhoto {
+  width: 500px !important;
+  height: 500px !important;
+}
+}
+
+@media (min-width: 1280px) {
+  .apod-photo {
+    width: 65% !important;
+  }
+  .text-explanation {
+    width: 75% !important;
+    margin: auto;
+  }
+  .marsPhoto {
+    width: 550px !important;
+    height: 550px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .apod-photo {
+    width: 52.5% !important;
+  }
+  .text-explanation {
+    width: 65% !important;
+    margin: auto;
+  }
+  .marsPhoto {
+    width: 650px !important;
+    height: 650px !important;
+  }
+}
+@media (min-width: 2050px) {
+  .apod-photo {
+    width: 45% !important;
+  }
+  .text-explanation {
+    width: 55% !important;
+    margin: auto;
+  }
+  .marsPhoto {
+    width: 700px !important;
+    height: 700px !important;
+  }
+}
+
+select,
+option {
+  font-family: "Space mono";
+}
+
+svg {
+  margin-left: 1em;
+  margin-top: 1.24em;
+}
+
+.search {
+  font-size: 3.45rem;
+}
+
+.date {
+  margin-top: 1em;
+}
+.desc {
+  margin: auto;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+  color: #636363;
+  font-size: 0.7rem;
+  width: 75%;
+}
+
+#logo {
+  text-align: center;
+  background-color: #111;
+  padding: 1em 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+#logo img {
+  margin: auto;
+  vertical-align: middle;
+}
+
+#logo span {
+  height: 100%;
+  font-size: 1.5em;
+  vertical-align: middle;
+  font-family: "Space mono";
+  margin-left: 0.1em;
+  color: #636363;
+}
+
+@media screen and (max-width: 5500px) {
+  #logo img {
+    width: 15%;
+  }
+}
+
+a:hover,
+a:focus {
+  color: #8f8f8f;
+}
+
+#menu a {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-shadow: 0 0.5px 0 #414142;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #636363;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box !important;
+  -webkit-tap-highlight-color: none !important;
+}
+
+div {
+  display: block;
+}
+
+body {
+ 
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: "Space mono";
+}
+
+.date,
+.desc {
+  color: #636363;
+}
+
+.date {
+  opacity: 0.4;
+}
+
+.spinner {
+  margin: auto;
+  margin-top: 8em;
+}
+
+.bar {
+  background: #111;
+  flex: none;
+  border-bottom: 1px solid #636363;
+  display: flex;
+  padding: 16px;
+}
+
+.toggle {
+  color: #636363;
+  margin: 0 16px;
+  border-color: #636363;
+  width: auto;
+}
+
+.footer {
+  z-index: 1;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.nav {
+  justify-content: space-around;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+
+  border-radius: 8px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  color: #111;
+  text-decoration: none;
+  font-family: "Space mono";
+}
+
+button:active {
+  background-color: #111;
+}
+
+.spinner {
+  margin-bottom: 4em;
+}
+
+.bar {
+  border-bottom: 0px !important;
+}
+
+.rovers {
+  border-radius: 50%;
+  width: 18vw;
+  height: 8vh;
+  margin-top: 1.4em;
+}
+
+.dd-header-title {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.dd-wrapper {
+  padding-right: 0px;
+}
+
+.dd-list {
+  align-self: center;
+  padding-inline-start: 0;
+}
+
+.check {
+  size: 2px;
+}
+
+.dd-header {
+  margin-top: 0.05em;
+  margin-bottom: -1em;
+}
+
+.roverDropdown {
+  text-align: center;
+  text-anchor: middle !important;
+  lighting-color: none !important;
+  justify-content: center;
+  align-items: center;
+}
+
+#curiosityCameras {
+  text-align: center !important;
+  align-self: center;
+  
+}
+
+select {
+  text-align: center !important;
+}
+
+.sol-input {
+  background-color: #fefefe !important;
+  text-align: center !important;
+  font-family: "Space mono";
+  font-size: 1em;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.sol {
+  margin-top: 1.25em;
+}
+
+.roverDropdown {
+  border-color: #111;
+  margin-top: 0px !important;
+  background-color: #111;
+  align-self: center;
+  text-align: center;
+  text-align-last: center;
+
+  direction: rtl;
+}
+
+.cameraDropdown {
+  border-color: #111;
+  margin-top: 1.5em !important;
+  background-color: #111;
+  align-self: center;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: justify;
+  text-align-last: "";
+  text-align-last: center;
+
+  direction: rtl;
+}
+
+
+
+button {
+  border: 0px solid #111;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  color: #636363;
+}
+
+button:hover
+ {
+  color: #8f8f8f;
+}
+
+.option {
+  text-align: center;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.noPhotos {
+  margin-top: 1em;
+}
+
+.marsTitle {
+  font-size: 1.7rem;
+}
+
+.marsInfo {
+  max-width: 100vw;
+  font-size: 14px;
+  margin: auto;
+  margin-top: 1em;
+  align-self: center;
+  align-items: center;
+  text-anchor: middle !important;
+  background-color: #5d8aa8 !important;
+  min-width: 200px;
+  margin-bottom: 1.05em;
+}
+
+.marsDiv {
+  width: 85vw;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.spinner-rover {
+  margin-top: 150em !important;
+}
+
+.photo-scroll {
+  display: flex;
+  background-color: #111;
+  min-width: 100%;
+
+  overflow-x: auto;
+}
+
+.photo-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.marsPhoto {
+  width: 300px;
+  height: 300px;
+}
+
+.rover-back {
+  margin-top: 0px !important;
+  border-bottom: 0px !important;
+}
+
+
+input {
+  border-color: transparent !important;
+  text-shadow: 0 .47px 0 #414142 !important;
+  color: transparent !important;
+
+}
+
+button:focus,
+select
+
+ {
+  outline: none;
+}
+
+#sol-input input {
+  border-color: #ffc0cb !important;
+}
+
+aside {
+  outline: none;
+}
+
+
+.scrollable-element {
+  scrollbar-color: dark #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242 !important;
+}
+
+
+
