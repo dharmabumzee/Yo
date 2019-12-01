@@ -4,12 +4,12 @@ import Container from "react-bootstrap/Container";
 import YouTube from "react-youtube";
 import { mediaTypeContainerStyles, apodPhotoStyles } from "../styles.js";
 
-const MediaType = props => {
-  if (props.mediaType === "image") {
+const MediaType = ({ mediaType, url }) => {
+  if (mediaType === "image") {
     return (
       <Container style={mediaTypeContainerStyles}>
         <Picture
-          src={props.url}
+          src={url}
           fluid="true"
           className="image apod-photo"
           id="apod-image"
@@ -18,8 +18,8 @@ const MediaType = props => {
         />
       </Container>
     );
-  } else if (props.mediaType === "video") {
-    return <YouTube>{props.url}</YouTube>;
+  } else if (mediaType === "video") {
+    return <YouTube>{url}</YouTube>;
   } else {
     return (
       <div>

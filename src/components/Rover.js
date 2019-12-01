@@ -1,25 +1,24 @@
 import React from "react";
 import { Picture } from "react-responsive-picture";
 
-const Rover = props => {
+const Rover = ({ img, id, rover, date, sol, camera }) => {
   return (
     <figure className="marsInfo">
       <Picture
         className="marsPhoto"
-        src={props.img}
-        alt={props.id}
-        sizes="(min-width: 36em) 33.3vw, 100vw"
+        src={img}
+        alt={id}
         fluid="true"
         style={{ marginBottom: "1em" }}
       />
       <br />
-      Rover: {props.rover}
+      Rover: {rover}
       <br />
-      Taken: {props.date}
+      Taken: {date}
       <br />
-      Sol: {props.sol}
+      Sol: {sol}
       <br />
-      {props.camera}
+      {camera}
       <br />
       <br />
     </figure>

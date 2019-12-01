@@ -1,17 +1,22 @@
 import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-import imageUrl from "../background.png";
-import { explanationContainerStyles, apodTitleStyles, textExplanationStyles } from '../styles.js';
-import "./../App.css";
+import {
+  explanationContainerStyles,
+  apodTitleStyles,
+  textExplanationStyles
+} from "../styles.js";
 
-const Explanation = props => {
+const Explanation = ({ explanation }) => {
   return (
-    <div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
+    <div className="App">
       <div className="app-anime" id="animate-area">
         <div className="App-content">
           <Jumbotron className="apod">
-            <Container className="apod-container" style={explanationContainerStyles}>
+            <Container
+              className="apod-container"
+              style={explanationContainerStyles}
+            >
               <h1
                 className="title apod-explanation-title"
                 style={apodTitleStyles}
@@ -19,8 +24,11 @@ const Explanation = props => {
               >
                 Astronomy Picture Of The Day
               </h1>
-              <p className="text text-explanation" style={textExplanationStyles}>
-                {props.explanation}
+              <p
+                className="text text-explanation"
+                style={textExplanationStyles}
+              >
+                {explanation}
               </p>
             </Container>
           </Jumbotron>
