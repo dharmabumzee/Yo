@@ -1,11 +1,3 @@
-/* .auto-grid {
-  --auto-grid-min-size: 16rem;
-
-  display: grid;
-  grid-template-columns: repeat(1, minmax(var(--auto-grid-min-size), 2fr));
-  grid-gap: 1rem;
-} */
-
 .App {
   height: 100vh;
   background-size: cover;
