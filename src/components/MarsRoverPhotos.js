@@ -7,16 +7,16 @@ import imageUrl from "../background.png";
 import TinyButton from "./TinyButton";
 import { AiOutlineSearch } from "react-icons/ai";
 import HeaderLogo from "./HeaderLogo";
-
 import Menu from "./Menu";
-import "../App.css";
-
-require("typeface-space-mono");
-require("lodash");
+import {
+  marsRoverStyles,
+  roverDropdownStyles,
+  cameraDropdownStyles
+} from "../styles.js";
 
 const MARS_ROVER = process.env.REACT_APP_NASA_API_KEY;
 
-function MarsRoverPhotosExperimental() {
+function MarsRoverPhotos() {
   // mars photos
   const [marsPhotos, setMarsPhotos] = useState([]);
   const [rover, setRover] = useState("");
@@ -47,7 +47,7 @@ function MarsRoverPhotosExperimental() {
   function findMaxSol() {
     axios
       .get(
-        `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=${MARS_ROVER}`
+        `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=EIcNchKUcf1ZRVFd3Gp1EaGBhYUhztoI7o1eWnOI`
       )
       .then(res => {
         setMaxSol(res.data.photo_manifest.max_sol);
@@ -61,16 +61,7 @@ function MarsRoverPhotosExperimental() {
           <HeaderLogo />
           <Menu />
           <Jumbotron className="apod">
-            <Container
-              className="apod-container"
-              style={{
-                display: "block",
-                maxWidth: "100%",
-                textAlign: "center",
-                color: "#636363",
-                fontFamily: "Space mono"
-              }}
-            >
+            <Container className="apod-container" style={marsRoverStyles}>
               {/* mars search */}
               <section className="marsDiv" id="marsDiv">
                 <h1 className="marsTitle">
@@ -94,53 +85,23 @@ function MarsRoverPhotosExperimental() {
                           setRover(event.target.value);
                           setMaxSol("");
                         }}
-                        style={{
-                          margin: "0 !important",
-                          fontFamily: "Space mono",
-                          fontSize: "16px",
-                          color: "#636363"
-                        }}
+                        style={roverDropdownStyles}
                       >
-                        <option
-                          hidden
-                          style={{
-                            margin: "auto",
-                            textAlign: "justify",
-                            textAlignLast: "center"
-                          }}
-                        >
-                          CHOOSE A ROVER
-                        </option>
-                        <option
-                          value="curiosity"
-                          style={{
-                            textAlign: "center !important",
-                            textAlignLast: "center",
-                            fontFamily: "Space mono"
-                          }}
-                        >
+                        <option hidden>CHOOSE A ROVER</option>
+                        <option value="curiosity">
                           CURIOSITY - ACTIVE MISSION
                         </option>
                         <option value="opportunity">
                           OPPORTUNITY OPPY - RETIRED
                         </option>
-                        <option
-                          value="spirit"
-                          style={{ textAlignLast: "center" }}
-                        >
+                        <option value="spirit">
                           SPIRIT ROVER MER-2 - RETIRED
                         </option>
                       </select>
                     </div>
 
                     {rover === "curiosity" && (
-                      <div
-                        style={{
-                          justifyContent: "items",
-                          alignItems: "center",
-                          fontFamily: "Space mono"
-                        }}
-                      >
+                      <div>
                         <select
                           className="cameraDropdown"
                           id="curiosityCameras"
@@ -150,21 +111,9 @@ function MarsRoverPhotosExperimental() {
                             setCamera(event.target.value);
                             findMaxSol();
                           }}
-                          style={{
-                            color: "#636363",
-                            alignSelf: "center !important",
-                            margin: "auto",
-                            fontFamily: "Space mono",
-                            fontSize: "1rem",
-                            marginTop: "1em",
-                            borderColor: "#111",
-                            textAlign: "justify",
-                            textAlignLast: "center"
-                          }}
+                          style={cameraDropdownStyles}
                         >
-                          <option style={{ textAlign: "center" }}>
-                            SELECT A CAMERA
-                          </option>
+                          <option>SELECT A CAMERA</option>
                           <option value="FHAZ">
                             FRONT HAZARD AVOIDANCE CAMERA
                           </option>
@@ -191,13 +140,7 @@ function MarsRoverPhotosExperimental() {
                             setCamera(event.target.value);
                             findMaxSol();
                           }}
-                          style={{
-                            alignSelf: "center",
-                            fontFamily: "Space mono",
-                            fontSize: "1em",
-                            marginTop: "1em",
-                            color: "#636363"
-                          }}
+                          style={cameraDropdownStyles}
                         >
                           <option>SELECT A CAMERA</option>
                           <option value="PANCAM">PANORAMIC CAMERA</option>
@@ -218,13 +161,7 @@ function MarsRoverPhotosExperimental() {
                             setCamera(event.target.value);
                             findMaxSol();
                           }}
-                          style={{
-                            color: "#636363",
-                            alignSelf: "center",
-                            fontFamily: "Space mono",
-                            fontSize: "16px",
-                            marginTop: "1em"
-                          }}
+                          style={cameraDropdownStyles}
                         >
                           <option>SELECT A CAMERA</option>
                           <option value="NAVCAM">PANORAMIC CAMERA</option>
@@ -234,38 +171,27 @@ function MarsRoverPhotosExperimental() {
                     )}
 
                     {maxSol !== "" && rover && (
-                      <div
-                        className="sol"
-                        style={{
-                          fontSize: "1rem",
-                          color: "#636363",
-                          fontFamily: "Space mono",
-                          marginBottom: "2em"
-                         
-                        }}
-                      >
+                      <div className="sol" style={{ marginBottom: "2em" }}>
                         Enter a number between 0 and {maxSol}:
                         <br />
                         <input
                           type="text"
                           className="sol-input"
                           id="sol-input"
+                          placeholder="Sol is a Mars-day"
                           onChange={event => {
                             event.preventDefault();
                             setSol(event.target.value);
                           }}
-                          placeholder="Sol is a Mars-day"
-                          style={{ fontSize: "14px", fontFamily: "Space mono",  outline: 'rgba(51, 181, 229, 0.4) !important'  }}
-                        ></input>
+                          style={{ fontSize: ".9rem" }}
+                        />
                         <br />
-                        <div style={{ marginTop: "2em", justifyContent: 'center', alignItems: 'center' }}>
-                        <button style={{ justifyContent: 'center', alignItems: 'center', marginRight: '1em'}}>
-                          
+                        <div style={{ marginTop: "2em" }}>
+                          <button style={{ marginRight: "1em" }}>
                             <AiOutlineSearch
                               className="search"
-                              style={{ margin: "auto", alignSelf: 'left'}}
-                          />
-                         
+                              style={{ margin: "auto" }}
+                            />
                           </button>
                         </div>
                       </div>
@@ -291,7 +217,10 @@ function MarsRoverPhotosExperimental() {
                 {loading === false &&
                   marsPhotos.map((photo, index) => {
                     return (
-                      <div className="photo-scroll" style={{ color: '#424242'}}>
+                      <div
+                        className="photo-scroll"
+                        style={{ color: "#424242" }}
+                      >
                         <Rover
                           className={`mars${index}`}
                           img={photo.img_src}
@@ -300,8 +229,6 @@ function MarsRoverPhotosExperimental() {
                           date={photo.earth_date}
                           sol={photo.sol}
                           camera={photo.camera.full_name}
-                          
-         
                         />
                       </div>
                     );
@@ -316,4 +243,4 @@ function MarsRoverPhotosExperimental() {
   );
 }
 
-export default MarsRoverPhotosExperimental;
+export default MarsRoverPhotos;
