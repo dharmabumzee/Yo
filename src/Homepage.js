@@ -4,10 +4,8 @@ import verticalImage from "./background.png";
 import horizontalImage from "./background.png";
 import HeaderLogo from "./components/HeaderLogo";
 import Menu from "./components/Menu";
-
 import "./App.css";
 
-require("typeface-space-mono");
 
 const Homepage = () => {
   const imageUrl = window.innerWidth >= 768 ? verticalImage : horizontalImage;

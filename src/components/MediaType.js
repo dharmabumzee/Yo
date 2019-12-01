@@ -2,32 +2,19 @@ import React from "react";
 import { Picture } from "react-responsive-picture";
 import Container from "react-bootstrap/Container";
 import YouTube from "react-youtube";
+import { mediaTypeContainerStyles, apodPhotoStyles } from "../styles.js";
 
 const MediaType = props => {
   if (props.mediaType === "image") {
     return (
-      <Container
-        style={{
-          height: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-          
-        }}
-      >
-        <img
+      <Container style={mediaTypeContainerStyles}>
+        <Picture
           src={props.url}
           fluid="true"
           className="image apod-photo"
           id="apod-image"
           alt="astronomy_picture_of_the_day"
-          style={{
-            width: "85%",
-            margin: "0",
-            borderRadius: "8px",
-            boxShadow: "0 .1px .2px 0 #636363"
-            
-          }}
+          style={apodPhotoStyles}
         />
       </Container>
     );
