@@ -1,9 +1,10 @@
 .App {
   height: 100vh;
-  background-size: cover;
+  background-image: url(background.png) top center/cover no-repeat #111;
+/*   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-color: #111;
+  background-color: #111; */
 }
 
 .App-content {
@@ -14,9 +15,7 @@
   justify-content: center;
   align-items: center;
   line-height: 1.5;
-
   flex: 1 1 0%;
-
   background-color: #111;
 }
 
@@ -50,6 +49,17 @@
   .search {
     margin-bottom: -.6em !important;
   }
+  .video {
+    width: 259px;
+    height: 145px;
+  }
+}
+
+@media (min-width: 362px) {
+  .video {
+    width: 350px;
+    height: 225px;
+  }
 }
 
 @media (max-height: 700px) and (orientation: portrait) {
@@ -63,6 +73,16 @@
   }
 }
 
+@media (min-width: 768px) {
+  .apod-photo {
+    width: 80% !important;
+  }
+  .video {
+    width: 604px;
+    height: 340px;
+  }
+}
+
 
 @media (min-width: 1024px) {
   .apod-photo {
@@ -71,7 +91,11 @@
   .marsPhoto {
   width: 500px !important;
   height: 500px !important;
-}
+  }
+  .video {
+    width: 782px;
+    height: 440px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -85,6 +109,10 @@
   .marsPhoto {
     width: 550px !important;
     height: 550px !important;
+  }
+  .video {
+    width: 782px;
+    height: 440px;
   }
 }
 
@@ -112,6 +140,20 @@
   .marsPhoto {
     width: 700px !important;
     height: 700px !important;
+  }
+  .video {
+    width: 960px;
+    height: 540px;
+  }
+}
+
+@media (min-width: 2400px) {
+  .apod-photo {
+    width: 100% !important;
+  }
+  .video {
+    width: 960px;
+    height: 540px;
   }
 }
 
@@ -456,15 +498,3 @@ select
 aside {
   outline: none;
 }
-
-
-.scrollable-element {
-  scrollbar-color: dark #111;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #424242 !important;
-}
-
-
-
