@@ -47,7 +47,7 @@ function MarsRoverPhotos() {
   function findMaxSol() {
     axios
       .get(
-        `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=EIcNchKUcf1ZRVFd3Gp1EaGBhYUhztoI7o1eWnOI`
+        `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?&api_key=${MARS_ROVER}`
       )
       .then(res => {
         setMaxSol(res.data.photo_manifest.max_sol);
@@ -125,6 +125,8 @@ function MarsRoverPhotos() {
                             CHEMISTRY AND CAMERA COMPLEX
                           </option>
                           <option value="NAVCAM">NAVIGATION CAMERA</option>
+                          <option value="MAHLI">MARS HAND LENS IMAGER</option>
+                          <option value="MARDI">MARS DESCENT IMAGER</option>
                         </select>
                       </div>
                     )}
@@ -143,8 +145,15 @@ function MarsRoverPhotos() {
                           style={cameraDropdownStyles}
                         >
                           <option>SELECT A CAMERA</option>
+                          <option value="FHAZ">
+                            FRONT HAZARD AVOIDANCE CAMERA
+                          </option>
+                          <option value="RHAZ">
+                            REAR HAZARD AVOIDANCE CAMERA
+                          </option>
                           <option value="PANCAM">PANORAMIC CAMERA</option>
                           <option value="NAVCAM">NAVIGATION CAMERA</option>
+                          <option value="MINITES">MINI-TES</option>
                         </select>
                       </div>
                     )}
@@ -164,8 +173,15 @@ function MarsRoverPhotos() {
                           style={cameraDropdownStyles}
                         >
                           <option>SELECT A CAMERA</option>
+                          <option value="FHAZ">
+                            FRONT HAZARD AVOIDANCE CAMERA
+                          </option>
+                          <option value="FHAZ">
+                            REAR HAZARD AVOIDANCE CAMERA
+                          </option>
                           <option value="NAVCAM">PANORAMIC CAMERA</option>
                           <option value="PANCAM">NAVIGATION CAMERA</option>
+                          <option value="MINITES">MINI-TES</option>
                         </select>
                       </div>
                     )}
