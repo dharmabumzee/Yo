@@ -7,12 +7,23 @@ import imageUrl from "../background.png";
 import TinyButton from "./TinyButton";
 import { AiOutlineSearch } from "react-icons/ai";
 import HeaderLogo from "./HeaderLogo";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 import Menu from "./Menu";
 import {
   marsRoverStyles,
   roverDropdownStyles,
   cameraDropdownStyles
 } from "../styles.js";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: 200
+    }
+  }
+}));
 
 const MARS_ROVER = process.env.REACT_APP_NASA_API_KEY;
 
@@ -26,6 +37,8 @@ function MarsRoverPhotos() {
   const [marsError, setMarsError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [placeholder, setPlaceholder] = useState("Sol is a Mars-day");
+  
+  const classes = useStyles();
 
   // mars photos
   const marsSearch = () => {
@@ -191,15 +204,16 @@ function MarsRoverPhotos() {
                       <div className="sol" style={{ marginBottom: "2em" }}>
                         Enter a number between 0 and {maxSol}:
                         <br />
-                         <div style={{ fontSize: ".3rem" }}>
+                        <div style={{ fontSize: ".7rem", margin: "1em 0" }}>
                            Try 55. It returns results for almost all cameras
                          </div>
                         <br />
-                        <input
+                        <TextField
                           type="text"
                           className="sol-input"
-                          id="sol-input"
-                          placeholder="Sol is a Mars-day"
+                          id="sol-input outlined-basic"
+                          variant="outlined"
+                          placeholder={placeholder}
                           onFocus={event => {
                             event.preventDefault();
                             setPlaceholder("");
@@ -212,17 +226,11 @@ function MarsRoverPhotos() {
                             event.preventDefault();
                             setSol(event.target.value);
                           }}
-                          style={{ fontSize: "14px" }}
+                          inputProps={{
+                            style: { textAlign: "center", fontSize: "14px" }
+                          }}
                         />
                         <br />
-                        <div style={{ marginTop: "2em" }}>
-                          <button style={{ marginRight: "1em" }}>
-                            <AiOutlineSearch
-                              className="search"
-                              style={{ margin: "auto" }}
-                            />
-                          </button>
-                        </div>
                       </div>
                     )}
                   </form>
