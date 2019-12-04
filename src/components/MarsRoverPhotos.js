@@ -190,6 +190,10 @@ function MarsRoverPhotos() {
                       <div className="sol" style={{ marginBottom: "2em" }}>
                         Enter a number between 0 and {maxSol}:
                         <br />
+                         <div style={{ fontSize: ".3rem" }}>
+                           Try 55. It returns results for almost all cameras
+                         </div>
+                        <br />
                         <input
                           type="text"
                           className="sol-input"
