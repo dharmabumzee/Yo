@@ -25,6 +25,7 @@ function MarsRoverPhotos() {
   const [camera, setCamera] = useState("");
   const [marsError, setMarsError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [placeholder, setPlaceholder] = useState("Sol is a Mars-day");
 
   // mars photos
   const marsSearch = () => {
@@ -199,11 +200,19 @@ function MarsRoverPhotos() {
                           className="sol-input"
                           id="sol-input"
                           placeholder="Sol is a Mars-day"
+                          onFocus={event => {
+                            event.preventDefault();
+                            setPlaceholder("");
+                          }}
+                          onBlur={event => {
+                            event.preventDefault();
+                            setPlaceholder("Sol is a Mars-day");
+                          }}
                           onChange={event => {
                             event.preventDefault();
                             setSol(event.target.value);
                           }}
-                          style={{ fontSize: ".9rem" }}
+                          style={{ fontSize: "14px" }}
                         />
                         <br />
                         <div style={{ marginTop: "2em" }}>
