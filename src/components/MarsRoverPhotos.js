@@ -5,7 +5,6 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import imageUrl from "../background.png";
 import TinyButton from "./TinyButton";
-import { AiOutlineSearch } from "react-icons/ai";
 import HeaderLogo from "./HeaderLogo";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -98,6 +97,8 @@ function MarsRoverPhotos() {
                           event.preventDefault();
                           setRover(event.target.value);
                           setMaxSol("");
+                          setCamera("");
+
                         }}
                         style={roverDropdownStyles}
                       >
