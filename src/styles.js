@@ -71,3 +71,17 @@ export const cameraDropdownStyles = {
   fontSize: "1rem",
   border: '1px solid grey'
 }
+
+export const noPhotoStyles = {
+  color: "#636363",
+  fontSize: "14px",
+  fontFamily: "Space mono",
+  arginTop: "0px"
+}
+
+export const searchIconStyles = {
+  color: '#636363 !important', 
+  display: 'inline-block', 
+  marginTop: "0px !important", 
+  marginLeft: ".5em"
+}
