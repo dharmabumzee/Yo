@@ -85,3 +85,10 @@ export const searchIconStyles = {
   marginTop: "0px !important", 
   marginLeft: ".5em"
 }
+
+export const tryStyles = {
+  fontSize: ".7rem",
+  margin: "1em 0",
+  width: "50%",
+  margin: "auto"
+}
