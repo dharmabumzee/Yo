@@ -12,7 +12,7 @@ const Apod = ({ date, title, copyright, url, mediaType }) => {
       <Container className="apod-container" style={containerStyles}>
         <div className="date">{date}</div>
         <div id="desc" className="desc">
-          {title} ➜ Copyright© {copyright}
+          {title} ➜ Copyright© {copyright ? { copyright } : "NASA"}
         </div>
         {url ? <MediaType mediaType={mediaType} url={url} /> : <Spinner />}
         <TinyButton />
