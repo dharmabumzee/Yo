@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from "./components/Select";
+import Select from "./Select";
 
 const SpiritRover = ({ camera, setCamera, findMaxSol, rover }) => {
   return rover === "spirit" && <Select />;
