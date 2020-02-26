@@ -26,7 +26,9 @@ export const apodTitleStyles = {
 export const textExplanationStyles = {
   textAlign: "justify",
   textJustify: "inter-character",
-  textIndent: "1em"
+  textIndent: "1em",
+  marginBottom: "5em",
+  color: "#757474"
 }
 
 export const mediaTypeContainerStyles = {
