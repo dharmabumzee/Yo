@@ -51,11 +51,16 @@ body.light-mode .photo-scroll {
 
 body.light-mode p,
 body.light-mode h1,
-body.light-mode .date,
 body.light-mode .desc,
 body.light-mode a {
   background-color: #f5f4f2 !important;
   color: #05293b !important;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .date {
+  background-color: #f5f4f2;
+  color: #000 !important;
   transition: background-color 0.3s ease;
 }
 
@@ -106,7 +111,7 @@ body.dark-mode a {
 
 body.dark-mode .date {
   background-color: #111;
-  color: #8a8888 !important;
+  color: #a19f9f;
   transition: background-color 0.2s ease;
 }
 
