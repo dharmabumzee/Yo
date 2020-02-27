@@ -1,10 +1,5 @@
 .App {
   height: 100vh;
-  background-image: url(background.png) top center/cover no-repeat #111;
-/*   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-color: #111; */
 }
 
 .App-content {
