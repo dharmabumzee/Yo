@@ -11,9 +11,7 @@ const Apod = ({ date, title, copyright, url, mediaType }) => {
     <Jumbotron className="apod">
       <Container className="apod-container" style={containerStyles}>
         <div className="date">{date}</div>
-        <div id="desc" className="desc">
-          {title} ➜ Copyright© {copyright ? { copyright } : "NASA"}
-        </div>
+         <TitleAndCopyright title={title} copyright={copyright} />
         {url ? <MediaType mediaType={mediaType} url={url} /> : <Spinner />}
         <TinyButton />
       </Container>
