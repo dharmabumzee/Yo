@@ -178,6 +178,8 @@ svg {
 
 .date {
   margin-top: 1em;
+  color: #8a8888;
+  opacity: 0.4;
 }
 .desc {
   margin: auto;
@@ -253,14 +255,10 @@ body {
   font-family: "Space mono";
 }
 
-.date,
 .desc {
   color: #636363;
 }
 
-.date {
-  opacity: 0.4;
-}
 
 .spinner {
   margin: auto;
