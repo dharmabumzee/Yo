@@ -59,6 +59,12 @@ body.light-mode a {
   transition: background-color 0.3s ease;
 }
 
+body.light-mode .dark-light-toggle {
+  background-color: #f5f4f2 !important;
+  color: #05293b !important;
+  transition: background-color 0.3s ease;
+}
+
 /* dark mode */
 
 body.dark-mode {
@@ -96,5 +102,11 @@ body.dark-mode .desc,
 body.dark-mode a {
   background-color: #111;
   color: #757474 !important;
+  transition: background-color 0.2s ease;
+}
+
+body.dark-mode .dark-light-toggle {
+  background-color: #111;
+  color: #8f8f8f;
   transition: background-color 0.2s ease;
 }
