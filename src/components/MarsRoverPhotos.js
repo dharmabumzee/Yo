@@ -75,7 +75,7 @@ function MarsRoverPhotos() {
   }
 
   return (
-    <div className="App" style={{ backgroundImage: `url(${imageUrl})` }}>
+    <div className="App">
       <div className="app-anime" id="animate-area">
         <div className="App-content">
           <HeaderLogo />
