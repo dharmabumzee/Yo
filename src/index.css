@@ -97,11 +97,16 @@ body.dark-mode button {
 
 body.dark-mode p,
 body.dark-mode h1,
-body.dark-mode .date,
 body.dark-mode .desc,
 body.dark-mode a {
   background-color: #111;
   color: #757474 !important;
+  transition: background-color 0.2s ease;
+}
+
+body.dark-mode .date {
+  background-color: #111;
+  color: #8a8888 !important;
   transition: background-color 0.2s ease;
 }
 
