@@ -1,6 +1,5 @@
 import React from "react";
 import Apod from "./components/Apod";
-import imageUrl from "./background.png";
 import HeaderLogo from "./components/HeaderLogo";
 import Menu from "./components/Menu";
 import Explanation from "./components/Explanation";
@@ -50,7 +49,6 @@ class Homepage extends React.Component {
       <div
         className="App nasa-app auto-grid"
         id="AppID"
-        style={{ backgroundImage: `url(${imageUrl})` }}
       >
         <div className="app-anime" id="animate-area">
           <div className="App-content">
