@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* light mode */
+
+body.light-mode {
+  background-color: #f5f4f2;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+body.light-mode div.App {
+  background-color: #f5f4f2;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .App-content {
+  background-color: #f5f4f2;
+  color: #05293b;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode #logo {
+  background-color: #f5f4f2;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode select {
+  background-color: #f5f4f2;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .photo-scroll {
+  background-color: #f5f4f2;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode p,
+body.light-mode h1,
+body.light-mode .date,
+body.light-mode .desc,
+body.light-mode a {
+  background-color: #f5f4f2 !important;
+  color: #05293b !important;
+  transition: background-color 0.3s ease;
+}
+
+/* dark mode */
+
+body.dark-mode {
+  background-color: #111;
+  color: #757474;
+  transition: background-color 0.2s ease;
+}
+body.dark-mode div.App {
+  background-color: #111;
+  color: #757474;
+  transition: background-color 0.2s ease;
+}
+
+body.dark-mode .App-content {
+  background-color: #111;
+  color: #757474;
+  transition: background-color 0.2s ease;
+}
+body.dark-mode #logo {
+  background-color: #111;
+  color: #757474;
+  transition: background-color 0.2s ease;
+}
+
+body.dark-mode button {
+  background-color: #111;
+  color: #8f8f8f;
+  transition: background-color 0.2s ease;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode .date,
+body.dark-mode .desc,
+body.dark-mode a {
+  background-color: #111;
+  color: #757474 !important;
+  transition: background-color 0.2s ease;
+}
