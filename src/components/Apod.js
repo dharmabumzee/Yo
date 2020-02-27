@@ -6,12 +6,14 @@ import Container from "react-bootstrap/Container";
 import TinyButton from "./TinyButton";
 import { containerStyles } from "../styles.js";
 
-const Apod = ({ date, title, copyright, url, mediaType }) => {
+const Apod = ({ date, title, copyright = "NASA", url, mediaType }) => {
   return (
     <Jumbotron className="apod">
       <Container className="apod-container" style={containerStyles}>
         <div className="date">{date}</div>
-         <TitleAndCopyright title={title} copyright={copyright} />
+          <div id="desc" className="desc">
+            {title} ➜ Copyright© {copyright}
+          </div>
         {url ? <MediaType mediaType={mediaType} url={url} /> : <Spinner />}
         <TinyButton />
       </Container>
